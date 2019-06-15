@@ -1,0 +1,3 @@
+<view class='empty_tip'>
+<button type="primary" style="width:50%;align-items: center;justify-content: center;" v-if="canIUse" open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信授权</button>
+</view>

@@ -1,0 +1,15 @@
+<view>
+  <view class='My-Main'>
+      <image src="{{userImage}}" class="UserImage"></image>
+      <text class="Username">{{userName}}</text>
+  </view>
+
+  <view class='My-MainTwo'>
+
+  </view>
+
+  <view class='My-MainThree' bindtap='about'>
+      <text>地址管理</text>
+      <image src='/image/right.png'></image>
+  </view>
+</view> 

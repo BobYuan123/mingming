@@ -1,0 +1,47 @@
+<view class='cartMain'>
+    <block wx:for="{{cartItems}}">
+        <view data-id="{{item.skuId}}"  class='cart-box' data-index="{{index}}">
+            <view class='icon'>
+                <icon wx:if="{{item.selected}}" type="success" color="red" size="20" bindtap="selectedCart" data-index="{{index}}" />
+                <icon wx:else type="circle" bindtap="selectedCart" size="20" data-index="{{index}}"/>
+            </view>
+            <view class='cart_main'>
+                <view class='left_imgae'>
+                   <!-- src="{{item.skuCoverPic}}" -->
+                    <image class="cart-image" src="https://www.dior.cn/beauty/version-5.156982000269/resize-image/ep/870/580/90/0/horizon%252Fcovers%252FY0028880_F002888001_E01_ZHC.jpg" ></image>  
+                </view>
+                <view class='up_box'>
+                    <view class='cart-title'>{{item.skuName}}</view>
+                    <image src='/image/删除.png' bindtap='shanchu' data-index="{{index}}" class='image'></image>
+                </view>
+                <view class='down_box'>
+                  <view class='cart-price'>￥{{item.skuPrice}}</view>
+                  <view class="input">
+                    <view bindtap='reduce'  class="cart-reduce"  data-index="{{index}}">-</view>
+                    <view class="cart-text">{{item.skuNm}}</view>
+                    <view bindtap='add' class="cart-add"  data-index="{{index}}">+</view>
+                  </view>
+                </view> 
+            </view>
+
+          
+            <!-- 底部 -->
+            <view class="cart-bottom">
+              <icon wx:if="{{CheckAll}}"  class="cart-icon" type="success" color="red" size="20" bindtap="select" data-index="{{index}}" />
+              <icon wx:else type="circle"   class="cart-icon" size="20" bindtap="select" data-index="{{index}}"/>
+              <text class='checkAll'>全选</text>
+
+              <view class='cart-pay'>
+                <text class='cart_pay' bindtap="goPay" data-id="{{item.id}}">结算</text>
+              </view>
+
+              <view class='cart-sum'>
+                  <text class='cart_sum'>
+                      <text class='sum_text'>合计：</text>
+                      <text class='sum_color'>￥{{total}}元</text>
+                  </text>
+              </view>
+            </view>
+          </view>
+    </block>
+</view>

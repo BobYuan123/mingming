@@ -1,0 +1,65 @@
+<!--pages/paymore/paymore.wxml-->
+<view>
+    <view class='pay-header'>
+    
+    </view>
+
+    <view class='pay-main'>
+        <view class='main-one'>
+            <text>购物清单</text>
+        </view>
+
+        <view class='main-two'>
+         <view wx:for="{{cartItems}}">
+            <image src="{{item.image}}" class='main-image'></image>
+         </view>
+        </view>
+    </view>
+
+    <view class='pay-address'>
+      <view class='mianTwo-one'>
+        <text>配送地址</text>
+      </view>
+
+      <view class='address' bindtap="goaddress">
+        <view class='pay-userinfo'>
+          <text decode>{{addressInfo.name}}&nbsp;&nbsp;&nbsp;&nbsp;{{addressInfo.mobile}}</text>
+        </view>
+        <view class='pay-useraddress'>
+          <text>
+           {{ addressInfo.region[0] }}{{ addressInfo.region[1] }}{{ addressInfo.region[2] }}{{addressInfo.detailaddress}}
+          </text>
+        </view>
+      </view>
+    </view> 
+
+    <view class='pay-mainThree'>
+        <view class='mainThree-one'>
+          <text>留言</text>
+        </view>
+
+        <view class='mainThree-two'>
+          <input placeholder="选填：给商家留言(100字以内)" auto-focus></input>
+        </view>
+    </view>
+
+    <view class='pay-mainFive'>
+        <view class='mainFive-one'>
+            <text class='left'>订单金额</text>
+            <text class='right'>￥{{data.price}}</text>
+        </view>
+        <view class='mainFive-two'>
+            <text class='left'>运费</text>
+            <text class='right'>+￥0</text>
+        </view>
+         <view class='mainFive-three'>
+            <text class='left'>实际付款</text>
+            <text class='right'>￥{{data.price}}</text>
+        </view> 
+    </view>
+
+  
+    <view class='pay-Bottom' bindtap='pay'>
+        <text>微信支付</text>
+    </view>
+</view>   

@@ -1,0 +1,90 @@
+<view id='box'>
+  <swiper 
+      indicator-dots="Boolean"
+      indicator-color="#ebebeb"
+      indicator-active-color="rgba(0, 0, 0, .3)"
+      autoplay="Boolean"
+      circular="Boolean"
+  >
+    <swiper-item>
+      <image src="{{spu.spuCoverPic}}" class="slide-image" />
+    </swiper-item>
+  </swiper>
+
+  <!--弹窗-->
+<view class="drawer_screen" bindtap="setModalStatus" data-status="0" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+  <view class="close_icon" bindtap="setModalStatus" data-status="0">x</view>
+  <view class="drawer_attr_content">
+    <view class="text_center">
+      <image class="drawer_image" src="{{spu.spuCoverPic}}" ></image>
+      <view class="mingcheng" wx:if="{{showSpu}}">
+        <view>{{spu.spuName}}</view>
+        <view style="font-size:29rpx;color:red">￥{{spu.lowPrice}}-{{spu.hightPrice}}</view>
+        <view style="font-size:26rpx;">库存：充足</view>
+      </view>
+      <view class="mingcheng" wx:if="{{showSku}}">
+        <view>{{sku.skuName}}</view>
+        <view style="font-size:29rpx;color:red">￥{{sku.skuPrice}}</view>
+        <view style="font-size:26rpx;">库存：充足</view>
+      </view>
+    </view>
+    <scroll-view scroll-y>
+    <!-- 规格 -->     
+    <view class="selectsize_content">
+      <block wx:for="{{properties}}" wx:key="item" wx:for-index="id">
+        <view class="content_title">{{item.name}}</view>
+        <view class='content_list' wx:key="items" >          
+          <view wx:for="{{item.childList}}" class="content_item {{item.childstyle}}" data-id="{{item.id}}"  data-pid="{{item.pid}}" data-index="{{index}}" data-pindex="{{id}}" data-style="{{item.childstyle}}" bindtap='clickMenu'>{{item.name}}</view>
+        </view>
+      </block>
+      <view class="shu"> 
+        <text class="cun">购买数量</text>
+        <view class="dian">
+          <view class="stepper">
+            <!-- 减号 -->
+            <text data-alpha-beta="0" bindtap="changeNum">-</text>
+            <!-- 数值 -->
+            <view class="nownum">{{amount}}</view>
+            <!-- 加号 -->
+            <text data-alpha-beta="1" bindtap="changeNum">+</text>
+          </view>
+        </view>
+      </view>
+    </view>  
+    </scroll-view>
+    <view class="footc" bindtap="addShopCart" data-type="buynow" data-status="{{status}}">{{buys}}</view>
+  </view>
+</view>
+
+  <view class='box'>
+      <text class='title'>{{spu.spuName}}</text>
+      <text class='price' wx:if="{{showSpu}}">￥{{spu.lowPrice}}-{{spu.hightPrice}}</text>
+            <text class='price' wx:if="{{showSku}}">￥{{sku.skuPrice}}</text>
+  </view>
+  <view class='box2' bindtap="setModalStatus" data-status="2">
+      <text class='title1'>已选</text>
+      <text class='spectext'>{{specdesc}}</text>
+      <text class='spectext1' wx:if="{{showSku}}">{{amount}}</text>
+  </view>
+
+  <view class='boxtwo'>
+    <view class="boxtwo-tab-nav {{HomeIndex == 0 ?'on':''}}" bindtap="boxtwo" data-index="0">商品详情</view>
+    <view class="boxtwo-tab-nav {{HomeIndex == 1 ?'on':''}}" bindtap="boxtwo" data-index="1">产品参数</view>
+  </view>   
+
+  <view class='dibu'>
+    <view class='cart' bindtap='gohome'>
+      <image class="icon_kf" src="/image/home.png" ></image>
+    </view>
+    <view class='cart1' bindtap='gocart'>
+      <image class="icon_kf" src="/image/car.png" ></image>
+    </view>
+    <view class='right'>
+        <text class='text' bindtap="setModalStatus" data-status="1">立即购买</text>
+    </view>
+    <view class='left'>
+        <text class='text' bindtap="setModalStatus" data-status="2">加入购物车</text>
+    </view>
+  </view>
+</view>

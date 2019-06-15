@@ -1,0 +1,43 @@
+ <import src="home-item/home-item-template.wxml" />
+
+<view id='box'>
+    <view class='box'>
+        <swiper 
+            indicator-dots="Boolean"
+            indicator-color="rgba(0, 0, 0, .3)
+            indicator-active-color="#ebebeb"
+            autoplay="Boolean"
+            circular="Boolean"
+          >
+           <block wx:for="{{goodsList}}" wx:for-item="item" class="left"  wx:for-index="idx">
+          <swiper-item >
+              <image  class='slide-image' src='{{item.spuCoverPic}}' catchtap='btn' data-id="{{item.spuId}}"></image>
+          </swiper-item>
+          </block>
+        </swiper>
+    </view>
+
+ 
+    <view class='boxTwo'>
+        <text>爆款产品</text>
+    </view> 
+
+
+    <view>
+      <block wx:for="{{goodsList}}" wx:for-item="item" class="left"  wx:for-index="idx">
+          <view catchtap='btn' data-id="{{item.spuId}}"> 
+            <view class='main_boxtwo'>
+                <image class='main-image' src="{{item.spuCoverPic}}"></image>
+                <view class='box'>
+                    <text class='main-title'>{{item.spuName}}</text>
+                    <text class='main-price'>￥{{item.lowPrice}}-{{item.hightPrice}}</text>
+                </view>
+            </view>
+          </view>
+      </block>
+    </view>
+  
+</view>
+
+
+

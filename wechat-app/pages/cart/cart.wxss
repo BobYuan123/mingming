@@ -1,0 +1,172 @@
+/* pages/cart/cart.wxss */
+.cartMain{
+ margin-bottom: 120rpx;
+}
+.cart_main{
+  width: 90%;
+  float: right;
+  flex-direction: row;
+}
+.cart-image{
+  width: 200rpx;
+  height: 200rpx;
+  float: left;
+  padding: 15rpx 10rpx;
+}
+.cart-box{
+  width: 100%;
+  height: 235rpx;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+.cart-boxtwo{
+  display: flex;
+  flex-direction:column;
+  
+}
+.left_imgae{
+  float: left;
+  width: 220rpx;
+}
+.up_box{
+  margin-top: 15rpx;
+  width: 65%;
+  height: 150rpx;
+  float: right;
+}
+.down_box{
+  width: 65%;
+  height: 65rpx;
+  float: right;
+}
+
+.cart-title{
+  float: left;
+  margin-top: 10rpx;
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+  width: 80%;
+}
+.cart-price{
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  width: 40%;
+}
+.image{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+  margin-right: 10rpx; 
+}
+.input{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180rpx;
+  height: 65rpx;
+  float: right;  
+  margin-right: 10rpx; 
+}
+.cart-add{
+  width: 60rpx;
+  height: 60rpx;
+  border-left: none;
+  background: #FBFBFB;
+  text-align: center;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-reduce{
+  width: 60rpx;
+  height: 60rpx;
+  border-right: none;
+  background: #FBFBFB;
+  text-align: center;
+  font-size: 30rpx;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-text{
+  width: 60rpx;
+  height: 60rpx;
+  background: #F4F4F4;
+  text-align: center;
+  font-size: 30rpx;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-bottom{
+  position: fixed;
+  width: 100%;
+  height: 87rpx;
+  bottom:0;
+  background: white;
+}
+.yuan{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+.icon{
+  float: left;
+  margin: 85rpx 0rpx;
+  width: 6%;
+  padding-left: 20rpx 
+}
+.SpCart{
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+}
+.Sptext{
+  font-size: 30rpx;
+}
+.cart-icon{
+  margin:18rpx 20rpx;
+  float: left;
+}
+.cart-sum{
+  width: 300rpx;
+  height: 100%;
+  line-height: 87rpx;
+  /* background: red; */
+  float: right;
+  text-align: center;
+}
+.cart-pay{
+  width: 230rpx;
+  height: 100%;
+  background: red;
+  float: right;
+}
+.cart_pay{
+  display: block;
+  line-height: 87rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: white;
+}
+.sum_color{
+  color: black;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+.sum_text{
+  font-size: 30rpx;
+}
+.checkAll{
+  line-height: 87rpx;
+  font-size: 28rpx;
+}
+

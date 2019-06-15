@@ -1,0 +1,20 @@
+<view class="section">
+    <!-- 左侧类型 -->
+    <scroll-view scroll-y="true" class="left">
+        <view wx:for="{{typeTree}}" wx:key="id" data-id='{{item.id}}' bindtap="tapType" class="{{item.id == currType ? 'active' : ''}}" style="font-size:33rpx；">
+            {{item.prodCateName}}
+        </view>
+    </scroll-view>
+
+    <!-- 右侧数据 -->
+    <scroll-view scroll-y="true" class="right">
+        <view class="typeTree">
+            <view  class="brand" wx:for="{{goodsList}}" wx:for-item="data">
+                <navigator url="../listdetail/listdetail?cataid={{data.id}}&title={{data.prodCateName}}" wx:key="typeId" class="item">
+                    <image src="https://www.dior.cn/beauty/version-5.156982000269/resize-image/ep/870/580/90/0/horizon%252Fcovers%252FY0028880_F002888001_E01_ZHC.jpg"></image>
+                    <text>{{data.prodCateName}}</text>
+                </navigator>                   
+            </view>
+        </view>
+    </scroll-view>
+</view>

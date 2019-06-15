@@ -1,0 +1,26 @@
+<view class="list">
+  <block wx:for="{{goodsList}}" wx:key="*this" data-productid="{{item.spuId}}">
+    <view class="ban">
+      <navigator url="../../pages/home-details/home-details?id={{item.spuId}}" class="cover flex-wrp">
+        <image class="main-image" src="{{item.spuCoverPic}}"></image>
+        <view class="act-item ellipsis">
+          <text class="type">{{item.spuName}}</text>
+          </view>
+          <view class="act-item ellipsis" >
+            <text style="color:red">¥{{item.lowPrice}}-{{item.hightPrice}}</text>
+          </view>
+          <view class="act-item ellipsis" >
+            <text style="color:#999999;font-size:25rpx">已有9999人购买</text>
+          </view>
+      </navigator>
+    </view> 
+  </block>  
+</view>
+
+
+
+
+
+
+
+

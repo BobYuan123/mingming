@@ -1,0 +1,52 @@
+page {
+  background: #efeff4;
+}
+ 
+/* pages/address/address.wxss */
+
+.container {
+  font-size: 12px;
+  background-color: white;
+}
+
+.section {
+  height: 100rpx;
+  border-bottom: 1px lightgrey solid;
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx 0 30rpx;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: center;
+}
+
+.picker {
+  width: 600rpx;
+  height: 100%;
+}
+.ww{
+  width: 250px;
+}
+.add-address {
+  display:block;
+  position:fixed;
+  bottom:0;
+  left:0;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  background-color: #eee;
+  font-size: 11pt;
+  font-weight: 900;
+}
+.btn_max{
+  background-color: #1AAD19;
+  border-radius: 5px;
+  line-height: 2.55;
+  color: #FFFFFF;
+  font-size: 36rpx;
+  text-align: center;
+  width: 100%;
+}

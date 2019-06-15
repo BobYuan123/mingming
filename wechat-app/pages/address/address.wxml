@@ -1,0 +1,27 @@
+<view class="container"> 
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <input type="text" hidden="true" value="{{id}}" name="user_id"/>
+      <input type="text" name="name" placeholder="收货人姓名"  value='{{name}}' bindinput='getname'/>
+    </view>
+    <view class="section">
+      <input type="text" name="phone" placeholder="电话号码" value='{{mobile}}' bindinput='getmobile'/>
+    </view>
+    <view class="section">
+      <picker bindchange="bindPickerChange" mode="region" value="{{region}}">
+        <view class="picker">
+         当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <input type="text" name="address" placeholder="详细地址" value='{{detailaddress}}' bindinput='getaddress' style='width:100%'/>
+    </view>
+    <view>
+      <label></label>
+    </view>
+    <view class="add-address">
+      <button bindtap='saveaddress' data-id="{{data.id}}" class="btn_max">保存地址</button>
+    </view>
+  </form>
+</view>
